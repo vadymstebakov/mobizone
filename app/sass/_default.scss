@@ -1,0 +1,30 @@
+* {
+    transition: all .2s ease;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.flex-cont {
+    display: flex;
+}
+
+.justify-sb {
+    justify-content: space-between;
+}
+
+.justify-c {
+    justify-content: center;
+}
+
+.align-c {
+    align-items: center;
+}
+
+.justify-fe {
+    justify-content: flex-end;
+}
