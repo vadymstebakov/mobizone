@@ -1,7 +1,9 @@
 @media (max-width: 1200px) {
     // HEADER -------------------
-    .line {
-        left: -100px;
+    .home {
+        &:before {
+            left: -100px;
+        }
     }
     .header {
         .menu-item {
@@ -239,14 +241,14 @@
 
     // TABS---------------------
     .tabs {
-        padding: 25px 0 20px;
+        padding: 15px 0 20px;
 
         .swiper-container {
             overflow: hidden;
         }
     }
     .tabs-icon {
-        padding: 15px;
+        padding: 25px;
 
         .swiper-slide-active {
             box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
@@ -276,13 +278,14 @@
     }
     .tabs-content {
         display: block;
-        margin-top: 30px;
+        margin-top: 20px;
     }
     .tabs-content-box {
         padding-top: 5px;
 
         &__wrap {
             display: flex;
+            opacity: 1;
         }
     }
     .tabs-content-img {
@@ -345,5 +348,11 @@
                 margin-top: 10px;
             }
         }
+    }
+
+    // TABS---------------------
+    .tabs-icon {
+       width: 75%;
+       margin: 0 auto;
     }
 }

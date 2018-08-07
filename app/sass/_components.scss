@@ -6,25 +6,26 @@
     overflow: hidden;
     color: #fff;
 
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1019px;
+        background: url("../images/Rectangle.png") no-repeat;
+        background-size: cover;
+        animation-name: slideDown;
+        animation-duration: .5s;
+        animation-fill-mode: both;
+        animation-delay: .5s;
+        animation-direction: alternate;
+    }
+
     &__wrap {
         position: relative;
         z-index: 1;
     }
-}
-
-.line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1019px;
-    background: url("../images/Rectangle.png") no-repeat;
-    background-size: cover;
-    animation-name: slideDown;
-    animation-duration: .5s;
-    animation-fill-mode: both;
-    animation-delay: .5s;
-    animation-direction: alternate;
 }
 
 @keyframes slideDown{
@@ -405,10 +406,6 @@
     &__wrap {
         
     }
-
-    .swiper-container {
-        overflow: visible;
-    }
 }
 
 .tabs-icon {
@@ -417,6 +414,7 @@
     animation-fill-mode: both;
     animation-delay: 3.2s;
     animation-direction: alternate;
+    overflow: visible;
 }
 
 @keyframes slideUpOpacity{
@@ -482,16 +480,17 @@
 
 .tabs-content {
     margin-top: 60px;
-    display: none;
 }
 
 .tabs-content-box__wrap {
     display: none;
+    opacity: 0;
+
+    &:nth-child(3) {
+        display: flex;
+    }
 }
 
-.tabs-content-box_active {
-    display: block;
-}
 
 .tabs-content-img {
     width: 50%;

@@ -145,33 +145,32 @@ a:focus {
   position: relative;
   overflow: hidden;
   color: #fff; }
+  .home:before, .digits:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1019px;
+    background: url("../images/Rectangle.png") no-repeat;
+    -webkit-background-size: cover;
+            background-size: cover;
+    -webkit-animation-name: slideDown;
+            animation-name: slideDown;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate; }
   .home__wrap {
     position: relative;
     z-index: 1; }
 
-.line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 1019px;
-  background: url("../images/Rectangle.png") no-repeat;
-  -webkit-background-size: cover;
-          background-size: cover;
-  -webkit-animation-name: slideDown;
-          animation-name: slideDown;
-  -webkit-animation-duration: .5s;
-          animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate; }
-
 @-webkit-keyframes slideDown {
   0% {
-    opacity: 0;
     -webkit-transform: translateY(-2000px) translateX(2000px);
             transform: translateY(-2000px) translateX(2000px); }
   100% {
@@ -180,7 +179,6 @@ a:focus {
 
 @keyframes slideDown {
   0% {
-    opacity: 0;
     -webkit-transform: translateY(-2000px) translateX(2000px);
             transform: translateY(-2000px) translateX(2000px); }
   100% {
@@ -553,8 +551,6 @@ a:focus {
 
 .tabs {
   padding: 40px 0 20px; }
-  .tabs .swiper-container {
-    overflow: visible; }
 
 .tabs-icon {
   -webkit-animation-name: slideUpOpacity;
@@ -566,7 +562,8 @@ a:focus {
   -webkit-animation-delay: 3.2s;
           animation-delay: 3.2s;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate; }
+          animation-direction: alternate;
+  overflow: visible; }
 
 @-webkit-keyframes slideUpOpacity {
   0% {
@@ -629,14 +626,16 @@ a:focus {
     display: inline-block; }
 
 .tabs-content {
-  margin-top: 60px;
-  display: none; }
+  margin-top: 60px; }
 
 .tabs-content-box__wrap {
-  display: none; }
-
-.tabs-content-box_active {
-  display: block; }
+  display: none;
+  opacity: 0; }
+  .tabs-content-box__wrap:nth-child(3) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
 
 .tabs-content-img {
   width: 50%; }
@@ -703,7 +702,7 @@ a:focus {
   margin-top: 10px; }
 
 @media (max-width: 1200px) {
-  .line {
+  .home:before, .digits:before {
     left: -100px; }
   .header .menu-item__text {
     padding: 27px 15px; }
@@ -902,11 +901,11 @@ a:focus {
     line-height: 40px;
     font-size: 40px; }
   .tabs {
-    padding: 25px 0 20px; }
+    padding: 15px 0 20px; }
     .tabs .swiper-container {
       overflow: hidden; }
   .tabs-icon {
-    padding: 15px; }
+    padding: 25px; }
     .tabs-icon .swiper-slide-active {
       -webkit-box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
               box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1); }
@@ -938,14 +937,15 @@ a:focus {
     margin-top: 15px; }
   .tabs-content {
     display: block;
-    margin-top: 30px; }
+    margin-top: 20px; }
   .tabs-content-box {
     padding-top: 5px; }
     .tabs-content-box__wrap {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      opacity: 1; }
   .tabs-content-img {
     display: none; }
   .tabs-content-text {
@@ -1013,4 +1013,7 @@ a:focus {
       width: 230px; }
       .info-link a:last-child {
         margin-left: 0;
-        margin-top: 10px; } }
+        margin-top: 10px; }
+  .tabs-icon {
+    width: 75%;
+    margin: 0 auto; } }

@@ -70,12 +70,13 @@ $(document).ready(function() {
 
     function tabs() {
         var width = $(window).outerWidth();
-        console.log(width);
         var tabsAnimate = document.getElementById('tabs-icon');
         var tabs = $('#tabs');
         var tabsIcon = tabs.find('.icon-item');
         var tabsContent = tabs.find('.tabs-content');
         var tabsWrap = tabs.find('.tabs-content-box__wrap');
+        var tabsIconCenter = tabs.find('.icon-item:nth-child(3)');
+        var tabsWrapCenter = tabs.find('.tabs-content-box__wrap:nth-child(3)');
 
         $('#tabs-icon a[data-target^="anchore"]').on('click', function() {
             var element = $(this).attr('href'),
@@ -90,48 +91,55 @@ $(document).ready(function() {
         //     alert('Transition закончил свое выполнение');
         // }
         // tabsAnimate.addEventListener("animationcancel", showMessage, false);
-        if (width >= 768) {
+        if (width >= 769) {
             console.log('зашло в 768');
             tabsIcon.on('click.tabs', function() {
-                tabsContent.addClass('tabs-content-box_active');
                 tabsIcon.removeClass('icon-item_active').eq($(this).index()).addClass('icon-item_active');
-                tabsWrap.hide().eq($(this).index()).fadeIn().css('display', 'flex');
+                tabsWrap.hide().eq($(this).index()).css({
+                    'display': 'flex',
+                    'opacity': '1'
+                });
                 return false;
             });
             tabsAnimate.addEventListener('animationend', function() {
                 console.log('анимация');
-                var tabsIconCenter = tabs.find('.icon-item:nth-child(3)');
-                var tabsWrapCenter = tabs.find('.tabs-content-box__wrap:nth-child(3)');
-
+                
                 $(window).on('scroll', function() {
-                    var tabsIconHasClas = tabsIcon.hasClass('icon-item_active');
-                    var tabsContentHasClas = tabsContent.hasClass('tabs-content-box_active');
+                    var tabsIconHasClass = tabsIcon.hasClass('icon-item_active');
+                    console.log(tabsIconHasClass);
 
                     if (tabs.offset().top < $(window).scrollTop()) {
                         tabsIconCenter.addClass('icon-item_active');
-                        tabsContent.addClass('tabs-content-box_active');
-                        tabsWrapCenter.fadeIn().css('display', 'flex');
-                    } else if (tabsIconHasClas && tabsContentHasClas) {
+                        tabsWrapCenter.css({
+                            'display': 'flex',
+                            'opacity': '1'
+                        });
+                    }
+                    if (tabs.offset().top < $(window).scrollTop() && tabsIconHasClass == true) {
                         $(window).off('scroll');
+                        console.log('dead scroll');
                     }
                 });
             }, false);
         }
-        if ((width <= (767)) && (tabsThumbs == undefined) && (sliderBottom == undefined)) {
+        if ((width <= (768)) && (tabsThumbs == undefined) && (sliderBottom == undefined)) {
             console.log('зашло в 767');
             tabsIcon.off('click.tabs');
-            tabsContent.removeClass('tabs-content-box_active');
             tabsIcon.removeClass('icon-item_active');
-            tabsWrap.removeAttr('style', 'display');
+            tabsWrap.removeAttr('style');
 
             tabsThumbs = new Swiper('#tabs-icon', {
                 slidesPerView: 3,
-                spaceBetween: 20,
+                spaceBetween: 30,
                 centeredSlides: true,
                 slideToClickedSlide: true,
                 breakpoints: {
                     650: {
                         slidesPerView: 2,
+                    },
+                    480: {
+                        slidesPerView: 1,
+
                     }
                 }
             });
@@ -141,12 +149,15 @@ $(document).ready(function() {
             tabsThumbs.controller.control = sliderBottom;
             sliderBottom.controller.control = tabsThumbs;
         }
-        if ((width >= 768) && (tabsThumbs != undefined) && (sliderBottom != undefined)) {
+        if ((width >= 769) && (tabsThumbs != undefined) && (sliderBottom != undefined)) {
             console.log('зашло и откл. слайдер');
             tabsThumbs.destroy();
             tabsThumbs = undefined;
             sliderBottom.destroy();
             sliderBottom = undefined;
+            tabsIconCenter.addClass('icon-item_active');
+            tabsWrapCenter.css('opacity', '1');
+
         }
     };
     tabs();
