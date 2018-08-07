@@ -29,7 +29,6 @@
 
 @keyframes slideDown{
     0%{
-        opacity: 0;
         transform: translateY(-2000px) translateX(2000px);
     }
     100%{
@@ -38,7 +37,7 @@
 }
 
 .mob-menu {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     left: 0;
     right: 0;
@@ -406,6 +405,10 @@
     &__wrap {
         
     }
+
+    .swiper-container {
+        overflow: visible;
+    }
 }
 
 .tabs-icon {
@@ -433,6 +436,10 @@
     padding: 20px 0;
     border-right: 1px solid #eaeaea;
     position: relative;
+
+    &__img {
+        height: 87px;
+    }
 
     &__name {
         color: #afafaf;
@@ -476,13 +483,13 @@
 .tabs-content {
     margin-top: 60px;
     display: none;
-
-    &__wrap {
-        display: none;
-    }
 }
 
-.tabs-content_active {
+.tabs-content-box__wrap {
+    display: none;
+}
+
+.tabs-content-box_active {
     display: block;
 }
 

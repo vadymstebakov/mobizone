@@ -42,13 +42,11 @@ $(document).ready(function() {
 
         openMobMenu.on('click', function() {
             mobMenu.addClass('mob-menu-open');
-            home.addClass('home-visible');
             $('#mob-menu [data-accordion]').accordion();
 
             $(document).on('click', function(e) {
                 if (!mobMenu.is(e.target) && mobMenu.has(e.target).length === 0) {
                     mobMenu.removeClass('mob-menu-open');
-                    home.removeClass('home-visible');
                 }
             });
             return false;
@@ -67,52 +65,95 @@ $(document).ready(function() {
     });
 
     // Tabs
+    var tabsThumbs = undefined;
+    var sliderBottom = undefined;
+
     function tabs() {
-        // var width = $(window).outerWidth();
+        var width = $(window).outerWidth();
+        console.log(width);
         var tabsAnimate = document.getElementById('tabs-icon');
+        var tabs = $('#tabs');
+        var tabsIcon = tabs.find('.icon-item');
+        var tabsContent = tabs.find('.tabs-content');
+        var tabsWrap = tabs.find('.tabs-content-box__wrap');
 
-        tabsAnimate.addEventListener('animationend', function() {
-            var tabs = $('#tabs');
-            var tabsIcon = tabs.find('.icon-item');
-            var tabsIconCenter = tabs.find('.icon-item:nth-child(3)');
-            var tabsContent = tabs.find('.tabs-content');
-            var tabsWrap = tabs.find('.tabs-content__wrap');
-            var tabsWrapCenter = tabs.find('.tabs-content__wrap:nth-child(3)');
+        $('#tabs-icon a[data-target^="anchore"]').on('click', function() {
+            var element = $(this).attr('href'),
+                dist = $(element).offset().top - 25;
+            $('html, body').stop().animate({
+                'scrollTop': dist
+            }, 400);
+            return false;
+        });
 
-            $(window).on('scroll', function() {
-                var tabsIconHasClas = tabsIcon.hasClass('icon-item_active');
-                var tabsContentHasClas = tabsContent.hasClass('tabs-content_active');
-
-                if (tabs.offset().top < $(window).scrollTop()) {
-                    tabsIconCenter.addClass('icon-item_active');
-                    tabsContent.addClass('tabs-content_active');
-                    tabsWrapCenter.css('display', 'flex');
-                }
-                if (tabsIconHasClas && tabsContentHasClas) {
-                    $(window).off('scroll');
-                }
-            });
-
-            $('#tabs-icon a[data-target^="anchore"]').on('click', function() {
-                var element = $(this).attr('href'),
-                    dist = $(element).offset().top - 40;
-
-                $('html, body').animate({
-                    'scrollTop': dist
-                }, 400);
-
-                tabsContent.addClass('tabs-content_active');
+        // function showMessage() {
+        //     alert('Transition закончил свое выполнение');
+        // }
+        // tabsAnimate.addEventListener("animationcancel", showMessage, false);
+        if (width >= 768) {
+            console.log('зашло в 768');
+            tabsIcon.on('click.tabs', function() {
+                tabsContent.addClass('tabs-content-box_active');
                 tabsIcon.removeClass('icon-item_active').eq($(this).index()).addClass('icon-item_active');
-                tabsWrap.hide().eq($(this).index()).css('display', 'flex');
+                tabsWrap.hide().eq($(this).index()).fadeIn().css('display', 'flex');
                 return false;
             });
-        }, false);
+            tabsAnimate.addEventListener('animationend', function() {
+                console.log('анимация');
+                var tabsIconCenter = tabs.find('.icon-item:nth-child(3)');
+                var tabsWrapCenter = tabs.find('.tabs-content-box__wrap:nth-child(3)');
+
+                $(window).on('scroll', function() {
+                    var tabsIconHasClas = tabsIcon.hasClass('icon-item_active');
+                    var tabsContentHasClas = tabsContent.hasClass('tabs-content-box_active');
+
+                    if (tabs.offset().top < $(window).scrollTop()) {
+                        tabsIconCenter.addClass('icon-item_active');
+                        tabsContent.addClass('tabs-content-box_active');
+                        tabsWrapCenter.fadeIn().css('display', 'flex');
+                    } else if (tabsIconHasClas && tabsContentHasClas) {
+                        $(window).off('scroll');
+                    }
+                });
+            }, false);
+        }
+        if ((width <= (767)) && (tabsThumbs == undefined) && (sliderBottom == undefined)) {
+            console.log('зашло в 767');
+            tabsIcon.off('click.tabs');
+            tabsContent.removeClass('tabs-content-box_active');
+            tabsIcon.removeClass('icon-item_active');
+            tabsWrap.removeAttr('style', 'display');
+
+            tabsThumbs = new Swiper('#tabs-icon', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                centeredSlides: true,
+                slideToClickedSlide: true,
+                breakpoints: {
+                    650: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
+            sliderBottom = new Swiper('#tabs .tabs-content', {
+                spaceBetween: 20,
+            });
+            tabsThumbs.controller.control = sliderBottom;
+            sliderBottom.controller.control = tabsThumbs;
+        }
+        if ((width >= 768) && (tabsThumbs != undefined) && (sliderBottom != undefined)) {
+            console.log('зашло и откл. слайдер');
+            tabsThumbs.destroy();
+            tabsThumbs = undefined;
+            sliderBottom.destroy();
+            sliderBottom = undefined;
+        }
     };
     tabs();
 
-    // $(window).on('loaded resize', function() {
-    //     tabs();
-    // });
+    $(window).on('loaded resize', function() {
+        tabs();
+    });
 
 
 

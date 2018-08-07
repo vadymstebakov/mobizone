@@ -48,9 +48,6 @@
 
 @media (max-width: 992px) {
     // HEADER -------------------
-    .home-visible {
-        overflow: visible;
-    }
     .mob-menu {
         display: block;
     }
@@ -241,6 +238,64 @@
     }
 
     // TABS---------------------
+    .tabs {
+        padding: 25px 0 20px;
+
+        .swiper-container {
+            overflow: hidden;
+        }
+    }
+    .tabs-icon {
+        padding: 15px;
+
+        .swiper-slide-active {
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+
+            .icon-item__arrow_active {
+                display: inline-block;
+            }
+        }
+    }
+    @keyframes slideUpOpacity{
+        0%{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+        100%{
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+    .icon-item {
+        border-right: none;
+    }
+    .icon-item__name {
+        font-size: 17px;
+        line-height: 30px;
+        margin-top: 15px;
+    }
+    .tabs-content {
+        display: block;
+        margin-top: 30px;
+    }
+    .tabs-content-box {
+        padding-top: 5px;
+
+        &__wrap {
+            display: flex;
+        }
+    }
+    .tabs-content-img {
+        display: none;
+    }
+    .tabs-content-text {
+        width: 100%;
+        text-align: center;
+    }
+    .tabs-wrap-text {
+        text-align: center;
+    }
+    
 
 }
 

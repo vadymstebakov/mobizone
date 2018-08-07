@@ -41,7 +41,9 @@ gulp.task('scss', function() {
 
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/libs/accordion/jquery.accordion.js'])
+  return gulp.src(['app/libs/accordion/jquery.accordion.js',
+      'app/libs/swipper/swiper.min.js'
+    ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('app/js'));
