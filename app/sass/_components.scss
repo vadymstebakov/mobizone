@@ -38,14 +38,15 @@
 }
 
 .mob-menu {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     left: 0;
     right: 0;
     top: 0;
+    color: #fff;
     background-color: #4156dc;
     padding-top: 20px;
-    transform: translateY(-101%);
+    transform: translateY(-200%);
     transition: transform .4s ease;
     display: none;
 
@@ -55,7 +56,7 @@
         margin-top: 20px;
         margin-right: 15px;
         position: absolute;
-        top: 0;
+        top: 5px;
         right: 0;
     }
 
@@ -403,9 +404,6 @@
 // TABS---------------------------
 .tabs {
     padding: 40px 0 20px;
-    &__wrap {
-        
-    }
 }
 
 .tabs-icon {
@@ -461,10 +459,6 @@
         background: url("../images/arrow-big.png") no-repeat;
     }
 
-    &:hover {
-        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
-    }
-
     &:last-child {
         border-right: none;
     }
@@ -491,17 +485,12 @@
     }
 }
 
-
 .tabs-content-img {
     width: 50%;
 }
 
 .tabs-content-text {
     width: 47%;
-
-    &__wrap {
-        
-    }
 }
 
 .tabs-wrap-heading {
@@ -552,7 +541,8 @@
     justify-content: space-around;
 
     &__wrap {
-        
+        min-width: 175px;
+        max-width: 190px;
     }
 }
 
@@ -580,8 +570,31 @@
     margin-top: 10px;
 }
 
+// SERVICES -------------------
+.services {
+    padding: 60px 0 80px;
+    border-bottom: 2px solid #eaeaea;
+    text-align: center;
+}
+
+.services-heading {
+    @extend .digits-heading;
+    color: #3f3f3f;
+    margin-bottom: 40px;
+}
+
+.services-items {
+    overflow: visible;
+    
+    &__wrap {
+        flex-wrap: wrap;
+    }
+}
 
 
+.services-box {
+    width: 20%;
+}
 
 
 

@@ -17,6 +17,15 @@
             }
         }
     }
+
+    // DIGITS -------------------
+    .digits-basic {
+        flex-wrap: wrap;
+
+        &__wrap {
+            width: 18%;
+        }
+    }
 }
 
 @media (min-width: 993px) {
@@ -209,25 +218,48 @@
     .tabs-icon {
         animation-delay: 1.2s;
     }
-
     .icon-item__name {
         font-size: 14px;
         line-height: 25px;
         margin-top: 5px;
     }
-
     .tabs-content-text__wrap {
         align-self: center;
     }
-
     .tabs-wrap-heading {
         margin-top: 0;
     }
-
     .tabs-wrap-text {
         margin: 20px 0 20px;
         line-height: 22px;
         text-align: left;
+    }
+
+    // DIGITS -------------------
+    .digits-basic {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__wrap {
+            width: 24%;
+            margin-left: 5px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    .icon-item {
+        &:hover {
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+        }
     }
 }
 
@@ -297,6 +329,26 @@
     }
     .tabs-wrap-text {
         text-align: center;
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    // DIGITS -------------------
+    .digits-heading {
+        font-size: 24px;
+    }
+    .digits-basic {
+        &__wrap {
+            width: 40%;
+            margin-left: 0;
+            margin-bottom: 35px;
+
+            &:last-child {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
     }
     
 
@@ -352,7 +404,23 @@
 
     // TABS---------------------
     .tabs-icon {
-       width: 75%;
+       width: 82%;
        margin: 0 auto;
+    }
+
+    // DIGITS -------------------
+    .digits {
+        padding: 45px 0;
+    }
+    .digits-heading {
+        line-height: 35px;
+    }
+    .digits-basic {
+        flex-direction: column;
+        align-items: center;
+
+        &__wrap {
+            width: 49%;
+        }
     }
 }

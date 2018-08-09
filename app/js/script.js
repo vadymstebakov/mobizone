@@ -11,7 +11,9 @@ $(document).ready(function() {
 
     // Append in mob-menu
     function appendInMobMenu() {
+        $('body, html').css('overflow', 'hidden');
         var width = $(window).outerWidth();
+        $('body, html').css('overflow', 'visible');
         var mobMenu = $('#mob-menu');
         var header = $('#header');
         var userMenu = $('#header-user-menu');
@@ -33,7 +35,6 @@ $(document).ready(function() {
 
     // Open/close Menu
     function openMenu() {
-        var width = $(window).outerWidth();
         var openMobMenu = $('#open-menu');
         var mobMenu = $('#mob-menu');
         var closeMobMenu = mobMenu.find('.mob-menu__close');
@@ -51,7 +52,6 @@ $(document).ready(function() {
             });
             return false;
         });
-
         closeMobMenu.on('click', function() {
             mobMenu.removeClass('mob-menu-open');
             home.removeClass('home-visible');
@@ -60,16 +60,14 @@ $(document).ready(function() {
     };
     openMenu();
 
-    $(window).on('loaded resize', function() {
-        openMenu();
-    });
-
     // Tabs
     var tabsThumbs = undefined;
     var sliderBottom = undefined;
 
     function tabs() {
+        $('body, html').css('overflow', 'hidden');
         var width = $(window).outerWidth();
+        $('body, html').css('overflow', 'visible');
         var tabsAnimate = document.getElementById('tabs-icon');
         var tabs = $('#tabs');
         var tabsIcon = tabs.find('.icon-item');
@@ -80,66 +78,51 @@ $(document).ready(function() {
 
         $('#tabs-icon a[data-target^="anchore"]').on('click', function() {
             var element = $(this).attr('href'),
-                dist = $(element).offset().top - 25;
+                dist = $(element).offset().top - 15;
             $('html, body').stop().animate({
                 'scrollTop': dist
             }, 400);
             return false;
         });
-
-        // function showMessage() {
-        //     alert('Transition закончил свое выполнение');
-        // }
-        // tabsAnimate.addEventListener("animationcancel", showMessage, false);
         if (width >= 769) {
-            console.log('зашло в 768');
             tabsIcon.on('click.tabs', function() {
                 tabsIcon.removeClass('icon-item_active').eq($(this).index()).addClass('icon-item_active');
-                tabsWrap.hide().eq($(this).index()).css({
-                    'display': 'flex',
-                    'opacity': '1'
-                });
+                tabsWrap.removeAttr('style', 'opacity').hide().eq($(this).index()).css('display', 'flex').animate({
+                    opacity: '1'
+                }, 500);
                 return false;
             });
             tabsAnimate.addEventListener('animationend', function() {
-                console.log('анимация');
-                
                 $(window).on('scroll', function() {
                     var tabsIconHasClass = tabsIcon.hasClass('icon-item_active');
-                    console.log(tabsIconHasClass);
 
                     if (tabs.offset().top < $(window).scrollTop()) {
                         tabsIconCenter.addClass('icon-item_active');
-                        tabsWrapCenter.css({
-                            'display': 'flex',
-                            'opacity': '1'
-                        });
+                        tabsWrapCenter.css('display', 'flex').animate({
+                            opacity: '1'
+                        }, 500);
                     }
-                    if (tabs.offset().top < $(window).scrollTop() && tabsIconHasClass == true) {
+                    if (tabsIconHasClass == true) {
                         $(window).off('scroll');
-                        console.log('dead scroll');
                     }
                 });
             }, false);
         }
         if ((width <= (768)) && (tabsThumbs == undefined) && (sliderBottom == undefined)) {
-            console.log('зашло в 767');
             tabsIcon.off('click.tabs');
             tabsIcon.removeClass('icon-item_active');
             tabsWrap.removeAttr('style');
-
             tabsThumbs = new Swiper('#tabs-icon', {
                 slidesPerView: 3,
                 spaceBetween: 30,
                 centeredSlides: true,
                 slideToClickedSlide: true,
                 breakpoints: {
-                    650: {
+                    675: {
                         slidesPerView: 2,
                     },
                     480: {
                         slidesPerView: 1,
-
                     }
                 }
             });
@@ -150,20 +133,52 @@ $(document).ready(function() {
             sliderBottom.controller.control = tabsThumbs;
         }
         if ((width >= 769) && (tabsThumbs != undefined) && (sliderBottom != undefined)) {
-            console.log('зашло и откл. слайдер');
             tabsThumbs.destroy();
             tabsThumbs = undefined;
             sliderBottom.destroy();
             sliderBottom = undefined;
             tabsIconCenter.addClass('icon-item_active');
             tabsWrapCenter.css('opacity', '1');
-
         }
     };
     tabs();
 
     $(window).on('loaded resize', function() {
         tabs();
+    });
+
+    // Counter
+    $('#nomber-first').animate({
+        place: 190
+    }, {
+        duration: 4000,
+        step: function(place) {
+            this.innerHTML = (place).toFixed(0)
+        }
+    });
+    $('#nomber-second').animate({
+        place: 200
+    }, {
+        duration: 4500,
+        step: function(place) {
+            this.innerHTML = (place).toFixed(0)
+        }
+    });
+    $('#nomber-third').animate({
+        place: 98
+    }, {
+        duration: 3000,
+        step: function(place) {
+            this.innerHTML = (place).toFixed(0) + '%'
+        }
+    });
+    $('#nomber-fourth').animate({
+        place: 100
+    }, {
+        duration: 3500,
+        step: function(place) {
+            this.innerHTML = (place).toFixed(0) + '%'
+        }
     });
 
 
