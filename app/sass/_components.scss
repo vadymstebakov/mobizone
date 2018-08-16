@@ -572,7 +572,7 @@
 
 // SERVICES -------------------
 .services {
-    padding: 60px 0 80px;
+    padding: 60px 0 70px;
     border-bottom: 2px solid #eaeaea;
     text-align: center;
 }
@@ -580,7 +580,7 @@
 .services-heading {
     @extend .digits-heading;
     color: #3f3f3f;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .services-items {
@@ -591,9 +591,42 @@
     }
 }
 
-
 .services-box {
     width: 20%;
+    overflow: hidden;
+    border-radius: 20px;
+    
+    &__box {
+        border-right: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+        min-height: 210px;
+        padding: 35px 12px 0;
+    }
+    &:nth-child(n+6) .services-box__box {
+        border-bottom: none;
+    }
+    &:nth-child(5n+5) .services-box__box {
+        border-right: none;
+    }
+}
+
+.service-box-img {
+    min-height: 53px;
+    height: 100%;
+}
+
+.service-box-heading {
+    color: #3f3f3f;
+    font-family: $proximaNovaFont;
+    font-size: 17px;
+    line-height: 35px;
+}
+
+.service-box-text {
+    color: #797979;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .78px;
 }
 
 
