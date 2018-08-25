@@ -613,6 +613,14 @@
 .service-box-img {
     min-height: 53px;
     height: 100%;
+
+    .icon {
+        display: inline-block;
+        stroke: inherit;
+        fill: #FF6866;
+        width: 52px;
+        height: 52px;
+    }
 }
 
 .service-box-heading {

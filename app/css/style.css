@@ -736,6 +736,12 @@ a:focus {
 .service-box-img {
   min-height: 53px;
   height: 100%; }
+  .service-box-img .icon {
+    display: inline-block;
+    stroke: inherit;
+    fill: #FF6866;
+    width: 52px;
+    height: 52px; }
 
 .service-box-heading {
   color: #3f3f3f;
