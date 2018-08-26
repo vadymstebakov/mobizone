@@ -229,6 +229,31 @@ $(document).ready(function() {
 
     }(window, document));
 
-
+    // Slider-services
+    function slideServices() {
+        var swiper = new Swiper('.services-items', {
+            slidesPerView: 5,
+            slidesPerColumn: 2,
+            spaceBetween: 0,
+            allowTouchMove: false,
+            breakpoints: {
+                992: {
+                    slidesPerView: 4,
+                    allowTouchMove: true,
+                },
+                768: {
+                    slidesPerView: 3,
+                    allowTouchMove: true,
+                    slidesPerGroup: 2,
+                },
+                480: {
+                    slidesPerView: 2,
+                    allowTouchMove: true,
+                    slidesPerGroup: 2,
+                },
+            }
+        });
+    };
+    slideServices();
 
 });

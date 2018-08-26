@@ -584,7 +584,7 @@
 }
 
 .services-items {
-    overflow: visible;
+    
     
     &__wrap {
         flex-wrap: wrap;
@@ -602,10 +602,10 @@
         min-height: 210px;
         padding: 35px 12px 0;
     }
-    &:nth-child(n+6) .services-box__box {
+    &:nth-child(2n+2) .services-box__box {
         border-bottom: none;
     }
-    &:nth-child(5n+5) .services-box__box {
+    &:nth-child(n+9) .services-box__box {
         border-right: none;
     }
 }
@@ -635,7 +635,14 @@
     font-size: 13px;
     line-height: 16px;
     letter-spacing: .78px;
+    font-family: $robotoFontL;
 }
 
+
+// PRICE -------------------
+.price {
+    padding: 60px 0 70px;
+    text-align: center;
+}
 
 

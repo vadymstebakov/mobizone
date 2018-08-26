@@ -26,6 +26,18 @@
             width: 18%;
         }
     }
+
+    // SERVICES -----------------
+    .services-box {
+        &__box {
+            min-height: 225px;
+        }
+    }
+    .service-box-heading {
+        line-height: 22px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
 }
 
 @media (min-width: 993px) {
@@ -253,6 +265,20 @@
             }
         }
     }
+
+    // SERVICES -----------------
+    .services-box {
+        
+        &:nth-child(n+9) .services-box__box {
+            border-left: 1px solid #eaeaea;
+        }
+        &:nth-child(n+7) .services-box__box {
+            border-right: none;
+        }
+    }
+    .service-box-heading {
+        
+    }
 }
 
 @media (min-width: 769px) {
@@ -337,6 +363,7 @@
     // DIGITS -------------------
     .digits-heading {
         font-size: 24px;
+        line-height: 40px;
     }
     .digits-basic {
         &__wrap {
@@ -351,6 +378,19 @@
         }
     }
     
+     // SERVICES -----------------
+    .services-box {
+        &:nth-child(n+7) .services-box__box {
+            border-left: 1px solid #eaeaea;
+        }
+        &:nth-child(n+5) .services-box__box {
+            border-right: none;
+        }
+    }
+    .service-box-heading {
+        font-size: 15px;
+        line-height: 18px;
+    }
 
 }
 
@@ -422,5 +462,39 @@
         &__wrap {
             width: 49%;
         }
+    }
+
+    // SERVICES -----------------
+    .services {
+        padding: 40px 0 40px;
+    }
+    .services-box {
+        &:nth-child(n+5) .services-box__box {
+            border-left: 1px solid #eaeaea;
+        }
+        &:nth-child(n+3) .services-box__box {
+            border-right: none;
+        }
+        &:nth-child(5) .services-box__box {
+            border-left: none;
+            border-right: 1px solid #eaeaea;
+        }
+        &:nth-child(6) .services-box__box {
+            border-left: none;
+            border-right: 1px solid #eaeaea;
+        }
+        &:nth-child(7) .services-box__box {
+            border-left: none;
+        }
+        &:nth-child(8) .services-box__box {
+            border-left: none;
+        }
+    }
+    .services-heading {
+        margin-bottom: 10px;
+    }
+    .service-box-heading {
+        font-size: 15px;
+        line-height: 18px;
     }
 }
