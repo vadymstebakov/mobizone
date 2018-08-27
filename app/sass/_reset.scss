@@ -27,6 +27,12 @@ body {
     font-family: $robotoFontR;
     font-size: 14px;
     color: #3f3f3f;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+strong {
+  font-family: $proximaNovaFontB;
 }
 ol, ul {
     list-style: none;

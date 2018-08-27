@@ -1,13 +1,4 @@
 $(document).ready(function() {
-    // Animate
-    // wow = new WOW({
-    //     boxClass: 'wow',
-    //     animateClass: 'animated',
-    //     offset: 0,
-    //     mobile: true,
-    //     live: true
-    // });
-    // wow.init();
 
     // Append in mob-menu
     function appendInMobMenu() {
@@ -255,5 +246,37 @@ $(document).ready(function() {
         });
     };
     slideServices();
+
+    // Slider-prices
+    function slidePrices() {
+        var swiper = new Swiper('.price-main', {
+            slidesPerView: 4,
+            allowTouchMove: false,
+            spaceBetween: 0,
+            breakpoints: {
+                992: {
+                    slidesPerColumn: 2,
+                    slidesPerView: 2,
+                    allowTouchMove: false,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerColumn: 2,
+                    slidesPerView: 1,
+                    allowTouchMove: true,
+                    spaceBetween: 50,
+                },
+            }
+        });
+    };
+    slidePrices();
+
+    // Scroll-top
+    $('#scroller').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
 
 });

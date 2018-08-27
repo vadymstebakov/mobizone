@@ -24,9 +24,15 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  font-family: "Roboto Regular", sans-serif;
+  font-family: "RobotoRegular", sans-serif;
   font-size: 14px;
-  color: #3f3f3f; }
+  color: #3f3f3f;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+strong {
+  font-family: "ProximaNovaB", sans-serif; }
 
 ol, ul {
   list-style: none; }
@@ -60,28 +66,42 @@ a:focus {
   display: inline-block; }
 
 @font-face {
-  font-family: 'Proxima Nova';
+  font-family: 'ProximaNovaR';
   src: url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.eot");
   src: url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.woff2") format("woff2"), url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.woff") format("woff"), url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.ttf") format("truetype"), url("../fonts/ProximaNovaRegular/proximanovaregular-webfont.svg#ankchiddjgmbalcregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto Light';
+  font-family: 'ProximaNovaB';
+  src: url("../fonts/ProximaNovaBold/proximanovabold-webfont.eot");
+  src: url("../fonts/ProximaNovaBold/proximanovabold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaBold/proximanovabold-webfont.woff2") format("woff2"), url("../fonts/ProximaNovaBold/proximanovabold-webfont.woff") format("woff"), url("../fonts/ProximaNovaBold/proximanovabold-webfont.ttf") format("truetype"), url("../fonts/ProximaNovaBold/proximanovabold-webfont.svg#ielaolbpchndjkbregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'proxima_novalight';
+  src: url("../fonts/ProximaNovaLt/proximanova-light-webfont.eot");
+  src: url("../fonts/ProximaNovaLt/proximanova-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaLt/proximanova-light-webfont.woff2") format("woff2"), url("../fonts/ProximaNovaLt/proximanova-light-webfont.woff") format("woff"), url("../fonts/ProximaNovaLt/proximanova-light-webfont.ttf") format("truetype"), url("../fonts/ProximaNovaLt/proximanova-light-webfont.svg#proxima_novalight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'RobotoLight';
   src: url("../fonts/Roboto/robotolight-webfont.eot");
   src: url("../fonts/Roboto/robotolight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/robotolight-webfont.woff2") format("woff2"), url("../fonts/Roboto/robotolight-webfont.woff") format("woff"), url("../fonts/Roboto/robotolight-webfont.ttf") format("truetype"), url("../fonts/Roboto/robotolight-webfont.svg#roboto_lightregular") format("svg");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto Medium';
+  font-family: 'RobotoMedium';
   src: url("../fonts/Roboto/robotomedium-webfont.eot");
   src: url("../fonts/Roboto/robotomedium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/robotomedium-webfont.woff2") format("woff2"), url("../fonts/Roboto/robotomedium-webfont.woff") format("woff"), url("../fonts/Roboto/robotomedium-webfont.ttf") format("truetype"), url("../fonts/Roboto/robotomedium-webfont.svg#roboto_mediumregular") format("svg");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
-  font-family: 'Roboto Regular';
+  font-family: 'RobotoRegular';
   src: url("../fonts/Roboto/robotoregular-webfont.eot");
   src: url("../fonts/Roboto/robotoregular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/robotoregular-webfont.woff2") format("woff2"), url("../fonts/Roboto/robotoregular-webfont.woff") format("woff"), url("../fonts/Roboto/robotoregular-webfont.ttf") format("truetype"), url("../fonts/Roboto/robotoregular-webfont.svg#robotoregular") format("svg");
   font-weight: 400;
@@ -135,7 +155,7 @@ a:focus {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
-.home, .digits {
+.home, .digits, .registration {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#2022a2), to(#445ae2));
   background-image: -webkit-linear-gradient(bottom, #2022a2 0%, #445ae2 100%);
   background-image: -o-linear-gradient(bottom, #2022a2 0%, #445ae2 100%);
@@ -145,7 +165,7 @@ a:focus {
   position: relative;
   overflow: hidden;
   color: #fff; }
-  .home:before, .digits:before {
+  .home:before, .digits:before, .registration:before {
     content: "";
     position: absolute;
     top: 0;
@@ -423,7 +443,7 @@ a:focus {
 .info-wrap {
   width: 65%; }
   .info-wrap__heading {
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "ProximaNovaR", sans-serif;
     font-size: 43px;
     line-height: 50px; }
   .info-wrap__text {
@@ -440,7 +460,7 @@ a:focus {
             border-radius: 7px;
     background-color: #ffffff;
     color: #ff6866;
-    font-family: "Roboto Medium", sans-serif;
+    font-family: "RobotoMedium", sans-serif;
     font-size: 14px;
     letter-spacing: .28px;
     display: inline-block;
@@ -458,7 +478,7 @@ a:focus {
           border-radius: 6px;
   font-size: 14px;
   color: #fff;
-  font-family: "Roboto Medium", sans-serif;
+  font-family: "RobotoMedium", sans-serif;
   background-color: #ff6866;
   padding: 15px 22px;
   letter-spacing: .28px; }
@@ -596,7 +616,7 @@ a:focus {
     height: 87px; }
   .icon-item__name {
     color: #afafaf;
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "ProximaNovaR", sans-serif;
     font-size: 17px;
     font-weight: 300;
     line-height: 30px;
@@ -643,7 +663,7 @@ a:focus {
 
 .tabs-wrap-heading {
   color: #3f3f3f;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "ProximaNovaR", sans-serif;
   font-size: 25px;
   font-weight: 300;
   margin-top: 60px; }
@@ -660,17 +680,17 @@ a:focus {
 .tabs-wrap-btn {
   color: #fff; }
 
-.digits {
+.digits, .registration {
   padding: 55px 0; }
-  .digits__wrap {
+  .digits__wrap, .registration__wrap {
     position: relative;
     z-index: 1; }
 
-.digits-content {
+.digits-content, .registration-content {
   text-align: center; }
 
-.digits-heading, .services-heading {
-  font-family: "Proxima Nova", sans-serif;
+.digits-heading, .services-heading, .registration-heading {
+  font-family: "ProximaNovaR", sans-serif;
   font-size: 25px;
   line-height: 52px;
   margin-bottom: 30px; }
@@ -743,7 +763,7 @@ a:focus {
 
 .service-box-heading {
   color: #3f3f3f;
-  font-family: "Proxima Nova", sans-serif;
+  font-family: "ProximaNovaR", sans-serif;
   font-size: 17px;
   line-height: 35px; }
 
@@ -752,14 +772,208 @@ a:focus {
   font-size: 13px;
   line-height: 16px;
   letter-spacing: .78px;
-  font-family: "Roboto Light", sans-serif; }
+  font-family: "RobotoLight", sans-serif; }
 
 .price {
   padding: 60px 0 70px;
-  text-align: center; }
+  text-align: center;
+  font-family: "ProximaNovaR", sans-serif; }
+
+.price-heading {
+  margin-bottom: 40px; }
+  .price-heading__title {
+    font-size: 25px;
+    margin-bottom: 15px; }
+  .price-heading__text {
+    font-family: "RobotoLight", sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    line-height: 20px; }
+
+.price-main {
+  overflow: visible; }
+  .price-main__rate {
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    max-width: 245px;
+    width: 100%;
+    height: auto;
+    border: 1px solid #f4f4f4;
+    -webkit-flex-shrink: 1;
+        -ms-flex-negative: 1;
+            flex-shrink: 1;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease; }
+    .price-main__rate:nth-child(n+2) {
+      margin-left: 15px; }
+
+.rate-heading {
+  -webkit-border-radius: 10px 10px 0 0;
+          border-radius: 10px 10px 0 0;
+  padding: 20px 0 15px;
+  font-size: 25px;
+  color: #fefefe;
+  margin: -1px; }
+  .rate-heading_free {
+    background-color: #d1d1d1; }
+  .rate-heading_smart {
+    background-color: #455de4; }
+  .rate-heading_professional {
+    background-color: #85bc37; }
+  .rate-heading_ultimate {
+    background-color: #fdc01c; }
+
+.price-policy {
+  margin: 0 10px 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 100px;
+  height: 100%; }
+  .price-policy__price {
+    margin-bottom: 10px;
+    color: #6b6b6b; }
+  .price-policy__text {
+    color: #9f9f9f;
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.52px; }
+
+.price-currency {
+  font-size: 18px; }
+
+.price-digits {
+  font-size: 30px; }
+
+.price-rate__currency {
+  font-size: 13px; }
+
+.price-rate__digits {
+  font-size: 20px; }
+
+.price-rate__month {
+  font-size: 14px; }
+
+.price-rate:nth-child(n+2) {
+  margin-top: 5px; }
+
+.price-client {
+  font-size: 30px;
+  text-transform: uppercase; }
+
+.price-description {
+  font-family: "RobotoLight", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.26px;
+  margin-bottom: 30px;
+  line-height: 20px; }
+
+.btn-wrap {
+  margin-bottom: 40px; }
+  .btn-wrap a {
+    color: #606060;
+    font-family: "RobotoMedium", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.28px; }
+
+.registration__wrap {
+  max-width: 1030px; }
+
+.registration-main__text {
+  text-align: left;
+  font-size: 17px;
+  line-height: 25px;
+  letter-spacing: 0.68px;
+  font-family: "proxima_novalight", sans-serif; }
+
+.registration-main__btn {
+  margin-left: 20px; }
+
+.footer-info {
+  padding: 40px 0 10px;
+  color: #929292; }
+  .footer-info__wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+
+.menu-info {
+  font-size: 13px;
+  margin-bottom: 30px; }
+  .menu-info:nth-child(n+2) {
+    margin-left: 20px; }
+  .menu-info:nth-child(6) {
+    margin-left: 0;
+    margin-bottom: 0;
+    display: none; }
+  .menu-info__heading {
+    color: #3f3f3f;
+    font-family: "RobotoMedium", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .56px;
+    margin-bottom: 20px; }
+
+.menu-info-items:nth-child(n+2) {
+  margin-top: 12px; }
+
+.sprites-social__icon {
+  display: inline-block; }
+  .sprites-social__icon:nth-child(n+2) {
+    margin-left: 15px; }
+  .sprites-social__icon a {
+    position: relative;
+    width: 36px;
+    height: 36px; }
+    .sprites-social__icon a:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      background: url("../images/social.png") no-repeat; }
+  .sprites-social__icon + li a:before {
+    background-position-x: -59px; }
+  .sprites-social__icon + li + li a:before {
+    background-position-x: -118px; }
+
+footer {
+  padding: 20px 0 15px;
+  background-color: #292929; }
+
+.footer-wrap {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "RobotoLight", sans-serif; }
+  .footer-wrap__box a {
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0.48px; }
+  .footer-wrap_copyright {
+    color: #807f7f;
+    font-size: 12px;
+    letter-spacing: 0.48px; }
+  .footer-wrap_arrow a {
+    width: 28px;
+    height: 28px;
+    background: url("../images/arrow_up.png") no-repeat center center; }
+
+.cookie {
+  text-decoration: underline;
+  margin-right: 15px; }
+  .cookie:hover {
+    text-decoration: underline; }
 
 @media (max-width: 1200px) {
-  .home:before, .digits:before {
+  .home:before, .digits:before, .registration:before {
     left: -100px; }
   .header .menu-item__text {
     padding: 27px 15px; }
@@ -792,7 +1006,15 @@ a:focus {
   .menu-item:hover {
     background-color: #6676e1; }
   .menu-item:hover .menu-item__submenu {
-    display: block; } }
+    display: block; }
+  .price-main__rate {
+    -webkit-box-ordinal-group: 1 !important;
+    -webkit-order: 0 !important;
+        -ms-flex-order: 0 !important;
+            order: 0 !important; }
+    .price-main__rate:nth-child(n+2) {
+      margin-left: 15px !important;
+      margin-top: 0 !important; } }
 
 @media (max-width: 992px) {
   .mob-menu {
@@ -982,12 +1204,38 @@ a:focus {
   .services-box:nth-child(n+9) .services-box__box {
     border-left: 1px solid #eaeaea; }
   .services-box:nth-child(n+7) .services-box__box {
-    border-right: none; } }
+    border-right: none; }
+  .price-main-wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .price-main {
+    width: 75%; }
+    .price-main__rate:nth-child(2n+2) {
+      margin-left: 15px;
+      margin-top: 15px !important; }
+    .price-main__rate:nth-child(2) {
+      margin-left: 0; }
+  .registration-main__text strong {
+    display: block; }
+  .menu-info {
+    width: 22%; }
+    .menu-info:nth-child(n+5) {
+      margin-left: 0; }
+    .menu-info:nth-child(6) {
+      display: block; } }
 
 @media (min-width: 769px) {
   .icon-item:hover {
     -webkit-box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1); } }
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1); }
+  .price-main-wrap {
+    width: auto !important; }
+  .price-main__rate {
+    width: 100% !important; }
+    .price-main__rate:hover {
+      -webkit-box-shadow: 0 0 18px rgba(0, 0, 0, 0.19);
+              box-shadow: 0 0 18px rgba(0, 0, 0, 0.19); } }
 
 @media (max-width: 768px) {
   .info-wrap__heading {
@@ -1046,11 +1294,8 @@ a:focus {
     width: 100%;
     text-align: center; }
   .tabs-wrap-text {
-    text-align: center;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%; }
-  .digits-heading, .services-heading {
+    text-align: center; }
+  .digits-heading, .services-heading, .registration-heading {
     font-size: 24px;
     line-height: 40px; }
   .digits-basic__wrap {
@@ -1066,7 +1311,55 @@ a:focus {
     border-right: none; }
   .service-box-heading {
     font-size: 15px;
-    line-height: 18px; } }
+    line-height: 18px; }
+  .price-main {
+    width: 248px;
+    overflow: hidden; }
+    .price-main__rate {
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0; }
+      .price-main__rate:nth-child(2n+2) {
+        margin-left: 0;
+        margin-top: 35px !important; }
+      .price-main__rate:nth-child(n+2) {
+        margin-left: 0; }
+  .registration-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .registration-main__text {
+    margin-bottom: 30px; }
+  .footer-info__wrap {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  .menu-info {
+    width: 33%; }
+    .menu-info:nth-child(3) {
+      margin-left: 0; }
+  .footer-wrap {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .footer-wrap_copyright {
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2;
+      width: 100%;
+      margin-top: 30px; }
+    .footer-wrap_arrow {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .footer-wrap__box a {
+      display: block; }
+  .cookie {
+    margin-bottom: 20px; } }
 
 @media (max-width: 480px) {
   .info {
@@ -1131,9 +1424,9 @@ a:focus {
   .tabs-icon {
     width: 82%;
     margin: 0 auto; }
-  .digits {
+  .digits, .registration {
     padding: 45px 0; }
-  .digits-heading, .services-heading {
+  .digits-heading, .services-heading, .registration-heading {
     line-height: 35px; }
   .digits-basic {
     -webkit-box-orient: vertical;
@@ -1167,4 +1460,15 @@ a:focus {
     margin-bottom: 10px; }
   .service-box-heading {
     font-size: 15px;
-    line-height: 18px; } }
+    line-height: 18px; }
+  .price {
+    padding: 50px 0 45px; }
+  .footer-info__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .footer-info__wrap .menu-info {
+      margin-left: 0;
+      width: 100%; } }

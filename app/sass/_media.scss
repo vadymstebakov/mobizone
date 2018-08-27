@@ -67,6 +67,16 @@
             display: block;
         }
     }
+
+    // PRICE -------------------
+    .price-main__rate {
+        order: 0 !important;
+
+        &:nth-child(n+2) {
+            margin-left: 15px !important;
+            margin-top: 0 !important;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -279,12 +289,64 @@
     .service-box-heading {
         
     }
+
+    // PRICE -------------------
+    .price-main-wrap {
+        flex-wrap: wrap;
+    }
+
+    .price-main {
+        width: 75%;
+
+        &__rate {
+            &:nth-child(2n+2) {
+                margin-left: 15px;
+                margin-top: 15px !important;
+            }
+            &:nth-child(2) {
+                margin-left: 0;
+            }
+            
+        }
+    }
+
+    // REGISTRATION ------------------------
+    .registration-main__text {
+        strong {
+            display: block;
+        }
+    }
+
+    // FOOTER-INFO ---------------------------
+    .menu-info {
+        width: 22%;
+
+        &:nth-child(n+5) {
+            margin-left: 0;
+        }
+
+        &:nth-child(6) {
+            display: block;
+        }
+    }
+
+
 }
 
 @media (min-width: 769px) {
     .icon-item {
         &:hover {
             box-shadow: 0 2px 24px rgba(0, 0, 0, 0.1);
+        }
+    }
+    .price-main-wrap {
+        width: auto !important;
+    }
+    .price-main__rate {
+        width: 100% !important;
+
+        &:hover {
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.19);
         }
     }
 }
@@ -355,9 +417,6 @@
     }
     .tabs-wrap-text {
         text-align: center;
-        -ms-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
     }
 
     // DIGITS -------------------
@@ -390,6 +449,66 @@
     .service-box-heading {
         font-size: 15px;
         line-height: 18px;
+    }
+
+    // PRICE -------------------
+    .price-main {
+        width: 248px;
+        overflow: hidden;
+
+        &__rate {
+            flex-shrink: 0;
+
+            &:nth-child(2n+2) {
+                margin-left: 0;
+                margin-top: 35px !important;
+            }
+            &:nth-child(n+2) {
+                margin-left: 0;
+            }       
+        }
+    }
+    
+    // REGISTRATION ------------------------
+    .registration-main {
+        flex-direction: column;
+    }
+    .registration-main__text {
+        margin-bottom: 30px;
+    }
+
+    // FOOTER-INFO ---------------------------
+    .footer-info__wrap {
+        justify-content: space-around;
+    }
+    .menu-info {
+        width: 33%;
+
+        &:nth-child(3) {
+            margin-left: 0;
+        }
+    }
+
+    // FOOTER ---------------------
+    .footer-wrap {
+        flex-wrap: wrap;
+
+        &_copyright {
+            order: 2;
+            width: 100%;
+            margin-top: 30px;
+        }
+        &_arrow {
+            order: 1;
+        }
+        &__box {
+            a {
+                display: block;
+            }
+        }
+    }
+    .cookie {
+        margin-bottom: 20px;
     }
 
 }
@@ -496,5 +615,20 @@
     .service-box-heading {
         font-size: 15px;
         line-height: 18px;
+    }
+
+    // PRICE -------------------
+    .price {
+        padding: 50px 0 45px;
+    }
+
+    // FOOTER-INFO ---------------------------
+    .footer-info__wrap {
+        flex-direction: column;
+
+        .menu-info {
+            margin-left: 0;
+            width: 100%;
+        }
     }
 }

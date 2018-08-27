@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Proxima Nova';
+    font-family: 'ProximaNovaR';
     src: url('../fonts/ProximaNovaRegular/proximanovaregular-webfont.eot');
     src: url('../fonts/ProximaNovaRegular/proximanovaregular-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/ProximaNovaRegular/proximanovaregular-webfont.woff2') format('woff2'),
@@ -11,7 +11,31 @@
 }
 
 @font-face {
-    font-family: 'Roboto Light';
+    font-family: 'ProximaNovaB';
+    src: url('../fonts/ProximaNovaBold/proximanovabold-webfont.eot');
+    src: url('../fonts/ProximaNovaBold/proximanovabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ProximaNovaBold/proximanovabold-webfont.woff2') format('woff2'),
+         url('../fonts/ProximaNovaBold/proximanovabold-webfont.woff') format('woff'),
+         url('../fonts/ProximaNovaBold/proximanovabold-webfont.ttf') format('truetype'),
+         url('../fonts/ProximaNovaBold/proximanovabold-webfont.svg#ielaolbpchndjkbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_novalight';
+    src: url('../fonts/ProximaNovaLt/proximanova-light-webfont.eot');
+    src: url('../fonts/ProximaNovaLt/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ProximaNovaLt/proximanova-light-webfont.woff2') format('woff2'),
+         url('../fonts/ProximaNovaLt/proximanova-light-webfont.woff') format('woff'),
+         url('../fonts/ProximaNovaLt/proximanova-light-webfont.ttf') format('truetype'),
+         url('../fonts/ProximaNovaLt/proximanova-light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoLight';
     src: url('../fonts/Roboto/robotolight-webfont.eot');
     src: url('../fonts/Roboto/robotolight-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Roboto/robotolight-webfont.woff2') format('woff2'),
@@ -23,7 +47,7 @@
 }
 
 @font-face {
-    font-family: 'Roboto Medium';
+    font-family: 'RobotoMedium';
     src: url('../fonts/Roboto/robotomedium-webfont.eot');
     src: url('../fonts/Roboto/robotomedium-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Roboto/robotomedium-webfont.woff2') format('woff2'),
@@ -36,7 +60,7 @@
 
 
 @font-face {
-    font-family: 'Roboto Regular';
+    font-family: 'RobotoRegular';
     src: url('../fonts/Roboto/robotoregular-webfont.eot');
     src: url('../fonts/Roboto/robotoregular-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/Roboto/robotoregular-webfont.woff2') format('woff2'),
