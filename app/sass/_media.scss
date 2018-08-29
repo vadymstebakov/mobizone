@@ -28,11 +28,6 @@
     }
 
     // SERVICES -----------------
-    .services-box {
-        &__box {
-            min-height: 225px;
-        }
-    }
     .service-box-heading {
         line-height: 22px;
         margin-top: 5px;
@@ -274,21 +269,7 @@
                 margin-top: 20px;
             }
         }
-    }
-
-    // SERVICES -----------------
-    .services-box {
-        
-        &:nth-child(n+9) .services-box__box {
-            border-left: 1px solid #eaeaea;
-        }
-        &:nth-child(n+7) .services-box__box {
-            border-right: none;
-        }
-    }
-    .service-box-heading {
-        
-    }
+    }    
 
     // PRICE -------------------
     .price-main-wrap {
@@ -438,14 +419,6 @@
     }
     
      // SERVICES -----------------
-    .services-box {
-        &:nth-child(n+7) .services-box__box {
-            border-left: 1px solid #eaeaea;
-        }
-        &:nth-child(n+5) .services-box__box {
-            border-right: none;
-        }
-    }
     .service-box-heading {
         font-size: 15px;
         line-height: 18px;
@@ -586,28 +559,6 @@
     // SERVICES -----------------
     .services {
         padding: 40px 0 40px;
-    }
-    .services-box {
-        &:nth-child(n+5) .services-box__box {
-            border-left: 1px solid #eaeaea;
-        }
-        &:nth-child(n+3) .services-box__box {
-            border-right: none;
-        }
-        &:nth-child(5) .services-box__box {
-            border-left: none;
-            border-right: 1px solid #eaeaea;
-        }
-        &:nth-child(6) .services-box__box {
-            border-left: none;
-            border-right: 1px solid #eaeaea;
-        }
-        &:nth-child(7) .services-box__box {
-            border-left: none;
-        }
-        &:nth-child(8) .services-box__box {
-            border-left: none;
-        }
     }
     .services-heading {
         margin-bottom: 10px;

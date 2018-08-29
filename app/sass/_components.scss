@@ -337,6 +337,10 @@
     background-color: $bgBtn;
     padding: 15px 22px;
     letter-spacing: .28px;
+
+    &:hover {
+        box-shadow: 0 9px 16px rgba(0, 0, 0, 0.48);
+    }
 }
 
 .link-watch_btn {
@@ -584,10 +588,42 @@
 }
 
 .services-items {
-    
-    
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -5px;
+        bottom: 0;
+        z-index: 2;
+        width: 10px;
+        background-color: #fff;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: -5px;
+        z-index: 2;
+        width: 10px;
+        background-color: #fff;
+    }    
     &__wrap {
         flex-wrap: wrap;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            height: 10px;
+            background-color: #fff;
+        }
     }
 }
 
@@ -599,14 +635,8 @@
     &__box {
         border-right: 1px solid #eaeaea;
         border-bottom: 1px solid #eaeaea;
-        min-height: 210px;
-        padding: 35px 12px 0;
-    }
-    &:nth-child(2n+2) .services-box__box {
-        border-bottom: none;
-    }
-    &:nth-child(n+9) .services-box__box {
-        border-right: none;
+        min-height: 220px;
+        padding: 35px 12px 12px;
     }
 }
 
@@ -766,6 +796,10 @@
         font-family: $robotoFontM;
         font-size: 14px;
         letter-spacing: 0.28px;
+
+        &:hover {
+            color: #ff6866;
+        }
     }
 }
 
@@ -850,6 +884,7 @@
             position: relative;
             width: 36px;
             height: 36px;
+            border-radius: 50%;
 
             &:before {
                 content: "";
@@ -858,7 +893,12 @@
                 left: 0;
                 width: 36px;
                 height: 36px;
+                border-radius: 50%;
                 background: url("../images/social.png") no-repeat;
+            }
+
+            &:hover {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.34);
             }
         }
         & + li {

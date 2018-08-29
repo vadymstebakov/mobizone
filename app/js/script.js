@@ -59,6 +59,7 @@ $(document).ready(function() {
         $('body, html').css('overflow', 'hidden');
         var width = $(window).outerWidth();
         $('body, html').css('overflow', 'visible');
+        var height = $(window).outerHeight();
         var tabsAnimate = document.getElementById('tabs-icon');
         var tabs = $('#tabs');
         var tabsIcon = tabs.find('.icon-item');
@@ -86,7 +87,6 @@ $(document).ready(function() {
             tabsAnimate.addEventListener('animationend', function() {
                 $(window).on('scroll', function() {
                     var tabsIconHasClass = tabsIcon.hasClass('icon-item_active');
-
                     if (tabs.offset().top < $(window).scrollTop()) {
                         tabsIconCenter.addClass('icon-item_active');
                         tabsWrapCenter.css('display', 'flex').animate({
@@ -99,6 +99,16 @@ $(document).ready(function() {
                 });
             }, false);
         }
+
+        if (height >= 1200 && width >= 769) {
+            tabsAnimate.addEventListener('animationend', function() {
+                tabsIconCenter.addClass('icon-item_active');
+                tabsWrapCenter.css('display', 'flex').animate({
+                    opacity: '1'
+                }, 500);
+            });
+        }
+
         if ((width <= (768)) && (tabsThumbs == undefined) && (sliderBottom == undefined)) {
             tabsIcon.off('click.tabs');
             tabsIcon.removeClass('icon-item_active');
@@ -219,6 +229,26 @@ $(document).ready(function() {
         } catch (e) {}
 
     }(window, document));
+
+    // Auto-height 
+    var boxEl = $('.services-box__box');
+    var minHeight = 220;
+
+    function autoHeight() {
+        boxEl.each(function() {
+            if ($(this).outerHeight() > minHeight) {
+                minHeight = $(this).outerHeight();
+                boxEl.css('min-height', minHeight);
+            }
+        });
+    };
+    setTimeout(function() {
+        autoHeight();
+    }, 500);
+
+    $(window).on('loaded resize', function() {
+        autoHeight();
+    });
 
     // Slider-services
     function slideServices() {
