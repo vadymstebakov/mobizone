@@ -60,6 +60,7 @@ $(document).ready(function() {
         var width = $(window).outerWidth();
         $('body, html').css('overflow', 'visible');
         var height = $(window).outerHeight();
+        var hasId = $('#tabs-icon').length;
         var tabsAnimate = document.getElementById('tabs-icon');
         var tabs = $('#tabs');
         var tabsIcon = tabs.find('.icon-item');
@@ -76,7 +77,7 @@ $(document).ready(function() {
             }, 400);
             return false;
         });
-        if (width >= 769) {
+        if (width >= 769 && hasId) {
             tabsIcon.on('click.tabs', function() {
                 tabsIcon.removeClass('icon-item_active').eq($(this).index()).addClass('icon-item_active');
                 tabsWrap.removeAttr('style', 'opacity').hide().eq($(this).index()).css('display', 'flex').animate({
@@ -100,7 +101,7 @@ $(document).ready(function() {
             }, false);
         }
 
-        if (height >= 1200 && width >= 769) {
+        if (height >= 1200 && width >= 769 && hasId) {
             tabsAnimate.addEventListener('animationend', function() {
                 tabsIconCenter.addClass('icon-item_active');
                 tabsWrapCenter.css('display', 'flex').animate({
