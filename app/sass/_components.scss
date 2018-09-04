@@ -435,7 +435,7 @@
     }
 }
 
-// PLANS---------------------------
+// PLANS-TABLE---------------------------
 .plans {
     text-align: center;
     padding: 65px 0 50px;
@@ -457,7 +457,8 @@
             padding-left: 10px;
 
             &:first-child {
-                padding-left: 0;
+				padding-left: 0;
+				vertical-align: bottom;
             }
         }
     }
@@ -483,6 +484,10 @@ table {
 		color: #797979;
 		letter-spacing: 0.56px;
 		font-family: $robotoFontL;
+
+		&_empty {
+			height: 75px;
+		}
     }
 }
 
@@ -490,14 +495,46 @@ table {
     text-align: left;
 
     &__cell-heading {
-        vertical-align: bottom;
-    }
+		vertical-align: bottom;
+		padding-bottom: 15px;
+		padding-left: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.56px;
+		color: #535353;
+		font-family: $proximaNovaFont;
+
+		&_empty {
+			height: 180px;
+		}
+	}
 
     &__cell-main {
+		display: table-cell;
+		position: relative;
+
         &_heading {
             vertical-align: bottom;
-        }
-    }
+		}
+
+		a {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 14px;
+			width: 18px;
+			height: 18px;
+			background: url("../images/information.png") no-repeat center center;
+		}
+	}
+	
+	&__cell-footer {
+		display: block;
+		margin: 43px 0 27px;
+		color: #535353;
+		font-family: $proximaNovaFont;
+		text-transform: uppercase;
+		letter-spacing: 0.56px;
+	}
 }
 
 .table-plans-price {
@@ -524,27 +561,31 @@ table {
     &__main {
         &_icon {
             background: url("../images/yes.png") no-repeat center center;
-			width: 19px;
-			display: table-cell;
+			width: auto;
             height: 15px;
-            padding: 20px;
+			padding: 22px;
+			background-color: #f7f7f7;
         }
 
         &_icon-no {
             background: url("../images/no.png") no-repeat center center;
-			width: 19px;
-			display: table-cell;
+			width: auto;
             height: 3px;
-            padding: 20px;
+			padding: 22px;
+			background-color: #f7f7f7;
         }
 	}
 	
 	&__footer {
 		display: block;
-		margin: 0 15px 15px;
+		margin: 40px 15px 15px;
 		
 		.btn {
 			width: 100%;
+
+			&:hover {
+				color: #fff;
+			}
 		}
 	}
 }

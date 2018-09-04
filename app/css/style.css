@@ -599,7 +599,8 @@ a:focus {
     .plans-table__wrap > tbody > tr > td {
       padding-left: 10px; }
       .plans-table__wrap > tbody > tr > td:first-child {
-        padding-left: 0; }
+        padding-left: 0;
+        vertical-align: bottom; }
 
 table {
   width: 100%; }
@@ -617,13 +618,43 @@ table {
   color: #797979;
   letter-spacing: 0.56px;
   font-family: "RobotoLight", sans-serif; }
+  .table-main__cell_empty {
+    height: 75px; }
 
 .table-description {
   text-align: left; }
   .table-description__cell-heading {
-    vertical-align: bottom; }
-  .table-description__cell-main_heading {
-    vertical-align: bottom; }
+    vertical-align: bottom;
+    padding-bottom: 15px;
+    padding-left: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.56px;
+    color: #535353;
+    font-family: "ProximaNovaR", sans-serif; }
+    .table-description__cell-heading_empty {
+      height: 180px; }
+  .table-description__cell-main {
+    display: table-cell;
+    position: relative; }
+    .table-description__cell-main_heading {
+      vertical-align: bottom; }
+    .table-description__cell-main a {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      right: 14px;
+      width: 18px;
+      height: 18px;
+      background: url("../images/information.png") no-repeat center center; }
+  .table-description__cell-footer {
+    display: block;
+    margin: 43px 0 27px;
+    color: #535353;
+    font-family: "ProximaNovaR", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.56px; }
 
 .table-plans-price {
   -webkit-border-radius: 10px;
@@ -654,21 +685,23 @@ table {
     margin-top: 10px; }
   .table-plans-price__main_icon {
     background: url("../images/yes.png") no-repeat center center;
-    width: 19px;
-    display: table-cell;
+    width: auto;
     height: 15px;
-    padding: 20px; }
+    padding: 22px;
+    background-color: #f7f7f7; }
   .table-plans-price__main_icon-no {
     background: url("../images/no.png") no-repeat center center;
-    width: 19px;
-    display: table-cell;
+    width: auto;
     height: 3px;
-    padding: 20px; }
+    padding: 22px;
+    background-color: #f7f7f7; }
   .table-plans-price__footer {
     display: block;
-    margin: 0 15px 15px; }
+    margin: 40px 15px 15px; }
     .table-plans-price__footer .btn {
       width: 100%; }
+      .table-plans-price__footer .btn:hover {
+        color: #fff; }
 
 .tabs {
   padding: 40px 0 20px; }
