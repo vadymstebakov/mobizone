@@ -28,11 +28,12 @@
     }
 }
 
-@keyframes slideDown{
-    0%{
+@keyframes slideDown {
+    0% {
         transform: translateY(-2000px) translateX(2000px);
     }
-    100%{
+
+    100% {
         transform: translateX(0) translateX(0);
     }
 }
@@ -89,8 +90,7 @@
         width: 100%;
         transform: rotate(90deg);
     }
-}      
-
+}
 
 // HEADER -------------------
 .header {
@@ -100,10 +100,12 @@
     &__logo {
         margin-right: 10px;
     }
+
     &__menu {
         flex-grow: 1;
         order: 1;
     }
+
     .menu-item {
         position: relative;
 
@@ -112,6 +114,7 @@
             font-size: 16px;
             letter-spacing: .32px;
         }
+
         &__submenu {
             position: absolute;
             top: 100%;
@@ -120,7 +123,7 @@
             box-shadow: 0 9px 24px rgba(0, 0, 0, 0.36);
             background-color: #6676e1;
             display: none;
-            
+
             a {
                 position: relative;
                 padding: 10px 20px;
@@ -141,7 +144,8 @@
             }
         }
     }
-    .submenu{
+
+    .submenu {
         display: none;
         position: absolute;
         top: 0;
@@ -156,6 +160,7 @@
             }
         }
     }
+
     &__user-menu {
         order: 2;
 
@@ -170,10 +175,12 @@
             }
         }
     }
+
     &__lng {
         order: 3;
     }
 }
+
 .lng-now {
     padding: 27px 23px 27px 40px;
     font-size: 16px;
@@ -184,7 +191,7 @@
     span {
         position: relative;
         text-transform: uppercase;
-        
+
         &:before {
             content: "";
             position: absolute;
@@ -205,15 +212,18 @@
             background: url("../images/arrow-lng.png") no-repeat;
             width: 6px;
             height: 4px;
-        }           
+        }
     }
+
     &:hover {
         background-color: #6676e1;
     }
+
     &:hover .lng-wrap {
-        display: block;    
+        display: block;
     }
 }
+
 .lng-wrap {
     display: none;
     position: absolute;
@@ -231,6 +241,7 @@
         letter-spacing: .28px;
     }
 }
+
 .header-mob-menu {
     order: 4;
     width: 28px;
@@ -281,17 +292,31 @@
 }
 
 // RATES -------------------
-
-
 // INFO---------------------
 .info {
     padding: 65px 0;
     position: relative;
+
+    &_rates {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 35px;
+        font-family: $proximaNovaFont;
+    }
+
+    &__text {
+        font-size: 16px;
+        margin-top: 25px;
+        letter-spacing: .64px;
+        line-height: 28px;
+    }
 }
 
 .info-wrap {
     width: 65%;
-    
+
     &__heading {
         font-family: $proximaNovaFont;
         font-size: 43px;
@@ -375,12 +400,13 @@
     animation-direction: alternate;
 }
 
-@keyframes tabletOpacity{
-    0%{
+@keyframes tabletOpacity {
+    0% {
         opacity: 0;
         transform: translateX(100%);
     }
-    100%{
+
+    100% {
         transform: translateX(0%);
         opacity: 1;
     }
@@ -397,15 +423,130 @@
     animation-direction: alternate;
 }
 
-@keyframes phoneOpacity{
-    0%{
+@keyframes phoneOpacity {
+    0% {
         opacity: 0;
         transform: translateX(100%);
     }
-    100%{
+
+    100% {
         transform: translateX(0%);
         opacity: 1;
     }
+}
+
+// PLANS---------------------------
+.plans {
+    text-align: center;
+    padding: 65px 0 50px;
+}
+
+.plans-heading {
+    color: #3f3f3f;
+    font-family: $proximaNovaFontL;
+    font-size: 25px;
+}
+
+.plans-table {
+    margin-top: 40px;
+
+    &__wrap {
+        width: 100%;
+
+        &>tbody>tr>td {
+            padding-left: 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+table {
+    width: 100%;
+}
+
+.table-main {
+    tr:nth-child(even) {
+        .table-main__cell {
+            background-color: #fff;
+        }
+    }
+
+    &__cell {
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        padding: 15px;
+        display: block;
+		margin: 0 10px;
+		color: #797979;
+		letter-spacing: 0.56px;
+		font-family: $robotoFontL;
+    }
+}
+
+.table-description {
+    text-align: left;
+
+    &__cell-heading {
+        vertical-align: bottom;
+    }
+
+    &__cell-main {
+        &_heading {
+            vertical-align: bottom;
+        }
+    }
+}
+
+.table-plans-price {
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #e8e8e8;
+	width: 200px;
+	overflow: hidden;
+
+    &:hover {
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.19);
+    }
+
+    &__heading {
+        .price-policy__price {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60px;
+            height: 100%;
+            margin-top: 10px;
+        }
+    }
+
+    &__main {
+        &_icon {
+            background: url("../images/yes.png") no-repeat center center;
+			width: 19px;
+			display: table-cell;
+            height: 15px;
+            padding: 20px;
+        }
+
+        &_icon-no {
+            background: url("../images/no.png") no-repeat center center;
+			width: 19px;
+			display: table-cell;
+            height: 3px;
+            padding: 20px;
+        }
+	}
+	
+	&__footer {
+		display: block;
+		margin: 0 15px 15px;
+		
+		.btn {
+			width: 100%;
+		}
+	}
 }
 
 // TABS---------------------------
@@ -422,12 +563,13 @@
     overflow: visible;
 }
 
-@keyframes slideUpOpacity{
-    0%{
+@keyframes slideUpOpacity {
+    0% {
         opacity: 0;
         transform: translateY(100%);
     }
-    100%{
+
+    100% {
         transform: translateY(0%);
         opacity: 1;
     }
@@ -603,6 +745,7 @@
         width: 10px;
         background-color: #fff;
     }
+
     &:after {
         content: "";
         position: absolute;
@@ -612,7 +755,8 @@
         z-index: 2;
         width: 10px;
         background-color: #fff;
-    }    
+    }
+
     &__wrap {
         flex-wrap: wrap;
         position: relative;
@@ -634,7 +778,7 @@
     width: 20%;
     overflow: hidden;
     border-radius: 20px;
-    
+
     &__box {
         border-right: 1px solid #eaeaea;
         border-bottom: 1px solid #eaeaea;
@@ -671,7 +815,6 @@
     font-family: $robotoFontL;
 }
 
-
 // PRICE -------------------
 .price {
     padding: 60px 0 70px;
@@ -686,6 +829,7 @@
         font-size: 25px;
         margin-bottom: 15px;
     }
+
     &__text {
         font-family: $robotoFontL;
         font-size: 15px;
@@ -722,12 +866,15 @@
     &_free {
         background-color: #d1d1d1;
     }
+
     &_smart {
         background-color: #455de4;
     }
+
     &_professional {
         background-color: #85bc37;
     }
+
     &_ultimate {
         background-color: #fdc01c;
     }
@@ -763,16 +910,18 @@
 }
 
 .price-rate {
-
     &__currency {
         font-size: 13px;
     }
+
     &__digits {
         font-size: 20px;
     }
+
     &__month {
         font-size: 14px;
     }
+
     &:nth-child(n+2) {
         margin-top: 5px;
     }
@@ -832,6 +981,7 @@
         letter-spacing: 0.68px;
         font-family: $proximaNovaFontL;
     }
+
     &__btn {
         margin-left: 20px;
     }
@@ -854,6 +1004,7 @@
     &:nth-child(n+2) {
         margin-left: 20px;
     }
+
     &:nth-child(6) {
         margin-left: 0;
         margin-bottom: 0;
@@ -883,6 +1034,7 @@
         &:nth-child(n+2) {
             margin-left: 15px;
         }
+
         a {
             position: relative;
             width: 36px;
@@ -904,20 +1056,22 @@
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.34);
             }
         }
-        & + li {
+
+        &+li {
             a {
                 &:before {
                     background-position-x: -59px;
                 }
             }
         }
-        & + li + li {
+
+        &+li+li {
             a {
                 &:before {
                     background-position-x: -118px;
                 }
             }
-        }  
+        }
     }
 }
 
@@ -938,11 +1092,13 @@ footer {
             letter-spacing: 0.48px;
         }
     }
+
     &_copyright {
         color: #807f7f;
         font-size: 12px;
         letter-spacing: 0.48px;
     }
+
     &_arrow {
         a {
             width: 28px;
@@ -960,6 +1116,3 @@ footer {
         text-decoration: underline;
     }
 }
-
-
-
