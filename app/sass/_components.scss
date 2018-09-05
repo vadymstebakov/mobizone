@@ -98,7 +98,11 @@
     z-index: 1;
 
     &__logo {
-        margin-right: 10px;
+		margin-right: 10px;
+		
+		img {
+			max-height: 30px;
+		}
     }
 
     &__menu {
@@ -465,15 +469,19 @@
 }
 
 table {
-    width: 100%;
+	width: 100%;
+	border-collapse: separate;
 }
 
 .table-main {
-    tr:nth-child(even) {
-        .table-main__cell {
-            background-color: #fff;
-        }
-    }
+	tbody {
+		tr:nth-child(even) {
+			.table-main__cell {
+				background-color: #fff;
+				display: table-cell;
+			}
+		}
+	}
 
     &__cell {
         background-color: #f7f7f7;
@@ -509,7 +517,7 @@ table {
 	}
 
     &__cell-main {
-		display: table-cell;
+		margin: 0;
 		position: relative;
 
         &_heading {
@@ -529,7 +537,7 @@ table {
 	
 	&__cell-footer {
 		display: block;
-		margin: 43px 0 27px;
+		margin: 43px 0 29px;
 		color: #535353;
 		font-family: $proximaNovaFont;
 		text-transform: uppercase;
